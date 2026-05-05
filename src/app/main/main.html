@@ -1,0 +1,28 @@
+﻿<!-- =====================================================
+     main.html
+     Plantilla contenedora de la vista de tienda.
+     Organiza dos paneles: catálogo de productos y
+     carrito de compra, conectados por eventos.
+     ===================================================== -->
+
+<!-- Contenedor general para centrar y limitar el ancho de la vista -->
+<div class="wrapper">
+  <!-- Zona de paneles para mostrar listado y carrito en paralelo -->
+  <div class="paneles">
+    <div class="panel">
+      <!-- Componente de catálogo: recibe productos y emite altas al carrito -->
+      <app-listado-productos
+        [productos]="productos"
+        (addToCart)="onAddToCart($event)">
+      </app-listado-productos>
+    </div>
+
+    <div class="panel">
+      <!-- Componente de carrito: recibe items y emite eliminaciones -->
+      <app-carrito-compra
+        [carrito]="carrito"
+        (removeFromCart)="onRemoveFromCart($event)">
+      </app-carrito-compra>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,111 @@
+﻿/* =====================================================
+   admin-productos.scss
+   Estilos del panel de administración.
+   Define el diseño del formulario, tabla de productos
+   y estados visuales de interacción.
+   ===================================================== */
+
+/* Contenedor general del módulo de administración */
+.admin-wrapper {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* Tarjetas separadas para formulario y listado */
+.admin-panel {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 24px;
+}
+
+/* Encabezados de sección */
+h2,
+h3 {
+  margin-top: 0;
+  color: #1f2937;
+}
+
+/* Distribución vertical del formulario */
+.formulario {
+  display: grid;
+  gap: 16px;
+}
+
+/* Agrupa etiqueta, control y validaciones */
+.campo {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Etiquetas de campos */
+label {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+/* Estilo base de inputs del formulario */
+input {
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* Estado de foco para mejorar accesibilidad visual */
+input:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+/* Texto de error asociado a validaciones */
+.error {
+  color: #dc2626;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* Botón principal de acción */
+button {
+  width: fit-content;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Estado deshabilitado del botón cuando el formulario es inválido */
+button:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* Tabla administrativa del catálogo */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+/* Celdas de encabezado y contenido */
+th,
+td {
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+/* Encabezado de tabla con fondo diferenciado */
+th {
+  background: #f8fafc;
+}
+
+/* Variante de botón para eliminar */
+.btn-eliminar {
+  background: #dc2626;
+}

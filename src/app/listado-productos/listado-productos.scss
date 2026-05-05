@@ -1,0 +1,79 @@
+﻿/* =====================================================
+   listado-productos.scss
+   Estilos de la sección de catálogo.
+   Define la presentación de cada producto, estados de stock
+   y mensajes de lista vacía.
+   ===================================================== */
+
+/* Encabezado de la sección */
+h2 {
+  margin: 0 0 20px 0;
+  font-size: 32px;
+  color: #111827;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 12px;
+}
+
+/* Tarjeta individual de producto */
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding: 16px;
+  margin-bottom: 14px;
+  border-radius: 14px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+}
+
+/* Nombre del producto con jerarquía visual principal */
+.item-info strong {
+  display: block;
+  font-size: 19px;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+/* Detalles secundarios de precio y stock */
+.item-info p {
+  margin: 4px 0;
+  color: #4b5563;
+}
+
+/* Botón principal para añadir productos */
+button {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  min-width: 130px;
+}
+
+/* Estado deshabilitado cuando el producto está agotado */
+button:disabled {
+  background: #cbd5e1;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+/* Apariencia atenuada para productos sin stock */
+.sin-stock {
+  opacity: 0.65;
+  background: #f3f4f6;
+}
+
+/* Mensaje visual para catálogo vacío */
+.vacio {
+  background: #f9fafb;
+  border: 1px dashed #cbd5e1;
+  padding: 18px;
+  border-radius: 12px;
+  text-align: center;
+  color: #6b7280;
+  font-style: italic;
+}

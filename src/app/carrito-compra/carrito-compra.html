@@ -1,0 +1,27 @@
+﻿<!-- =====================================================
+     carrito-compra.html
+     Plantilla visual del carrito de compra.
+     Muestra los productos añadidos y ofrece la acción
+     de eliminar unidades del carrito.
+     ===================================================== -->
+
+<!-- Título de la sección de carrito -->
+<h2>Carrito</h2>
+
+<!-- Mensaje cuando no hay productos en el carrito -->
+<p class="vacio" *ngIf="carrito.length === 0">
+  Tu carrito está vacío
+</p>
+
+<!-- Listado de productos presentes en el carrito -->
+<div class="item" *ngFor="let producto of carrito">
+  <div class="item-info">
+    <strong>{{ producto.nombre }}</strong>
+    <p>Precio: {{ producto.precio }} €</p>
+  </div>
+
+  <!-- Botón para eliminar una unidad del producto seleccionado -->
+  <button (click)="eliminar(producto)">
+    Eliminar
+  </button>
+</div>

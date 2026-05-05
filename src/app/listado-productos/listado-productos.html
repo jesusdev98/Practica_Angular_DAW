@@ -1,0 +1,34 @@
+﻿<!-- =====================================================
+     listado-productos.html
+     Plantilla del catálogo de la tienda.
+     Muestra productos disponibles, su estado de stock
+     y la acción para añadir al carrito.
+     ===================================================== -->
+
+<!-- Título de la sección de catálogo -->
+<h2>Listado de productos</h2>
+
+<!-- Mensaje alternativo cuando no hay productos disponibles -->
+<p class="vacio" *ngIf="productos.length === 0">
+  Sin productos disponibles
+</p>
+
+<!-- Tarjeta de cada producto del catálogo -->
+<div
+  class="item"
+  *ngFor="let producto of productos"
+  [ngClass]="{'sin-stock': producto.stock === 0}"
+>
+  <div class="item-info">
+    <strong>{{ producto.nombre }}</strong>
+    <p>Precio: {{ producto.precio }} €</p>
+    <p>Stock: {{ producto.stock }}</p>
+  </div>
+
+  <!-- Acción principal de compra; se desactiva si no hay stock -->
+  <button
+    (click)="anadir(producto)"
+    [disabled]="producto.stock === 0">
+    {{ producto.stock === 0 ? 'Sin stock' : 'Añadir al carrito' }}
+  </button>
+</div>

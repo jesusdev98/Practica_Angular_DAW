@@ -1,0 +1,96 @@
+﻿<!-- =====================================================
+     admin-productos.html
+     Plantilla del panel de administración.
+     Incluye formulario reactivo para altas y tabla para
+     gestión del catálogo existente.
+     ===================================================== -->
+
+<!-- Contenedor global del área de administración -->
+<div class="admin-wrapper">
+  <div class="admin-panel">
+    <h2>Administración de productos</h2>
+
+    <!-- Formulario reactivo para crear nuevos productos -->
+    <form [formGroup]="productoForm" (ngSubmit)="addProducto()" class="formulario">
+      <div class="campo">
+        <label for="nombre">Nombre</label>
+        <input id="nombre" type="text" formControlName="nombre">
+
+        <!-- Validaciones del campo nombre -->
+        <div class="error" *ngIf="nombre?.touched && nombre?.errors?.['required']">
+          El nombre es obligatorio
+        </div>
+        <div class="error" *ngIf="nombre?.touched && nombre?.errors?.['minlength']">
+          Mínimo 3 caracteres
+        </div>
+      </div>
+
+      <div class="campo">
+        <label for="precio">Precio</label>
+        <input id="precio" type="number" formControlName="precio" step="0.01">
+
+        <!-- Validaciones del campo precio -->
+        <div class="error" *ngIf="precio?.touched && precio?.errors?.['required']">
+          El precio es obligatorio
+        </div>
+        <div class="error" *ngIf="precio?.touched && precio?.errors?.['min']">
+          El precio debe ser mayor que 0
+        </div>
+      </div>
+
+      <div class="campo">
+        <label for="stock">Stock</label>
+        <input id="stock" type="number" formControlName="stock">
+
+        <!-- Validaciones del campo stock -->
+        <div class="error" *ngIf="stock?.touched && stock?.errors?.['required']">
+          El stock es obligatorio
+        </div>
+        <div class="error" *ngIf="stock?.touched && stock?.errors?.['min']">
+          El stock no puede ser negativo
+        </div>
+      </div>
+
+      <!-- Botón de envío: solo se activa con formulario válido -->
+      <button type="submit" [disabled]="productoForm.invalid">
+        Añadir producto
+      </button>
+    </form>
+  </div>
+
+  <div class="admin-panel">
+    <h3>Listado de productos</h3>
+
+    <!-- Tabla mostrada cuando existen productos en catálogo -->
+    <table *ngIf="productos.length > 0; else sinProductos">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Precio</th>
+          <th>Stock</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let producto of productos">
+          <td>{{ producto.id }}</td>
+          <td>{{ producto.nombre }}</td>
+          <td>{{ producto.precio }} €</td>
+          <td>{{ producto.stock }}</td>
+          <td>
+            <!-- Acción para eliminar el producto seleccionado -->
+            <button type="button" class="btn-eliminar" (click)="deleteProducto(producto.id)">
+              Eliminar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Mensaje alternativo cuando no hay productos disponibles -->
+    <ng-template #sinProductos>
+      <p>No hay productos disponibles.</p>
+    </ng-template>
+  </div>
+</div>

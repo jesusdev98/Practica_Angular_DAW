@@ -1,0 +1,19 @@
+﻿/* =====================================================
+   styles.scss
+   Hoja de estilos global de la aplicación.
+   Su objetivo es definir una base visual común para todos
+   los componentes (tipografía, fondo y box model).
+   ===================================================== */
+
+/* Evita desajustes de tamaño al incluir padding y borde en el cálculo total. */
+* {
+  box-sizing: border-box;
+}
+
+/* Estilo base del documento para mantener coherencia visual global. */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #eef2f7, #dfe7f1);
+  color: #1f2937;
+}

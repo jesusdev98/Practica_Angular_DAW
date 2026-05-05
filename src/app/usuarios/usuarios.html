@@ -1,0 +1,20 @@
+<!-- =====================================================
+     usuarios.html
+     Muestra la lista de usuarios obtenidos desde la API.
+     Incluye un botón para cargar los datos.
+     ===================================================== -->
+
+<h2>Usuarios</h2>
+
+<button (click)="cargarUsuarios()">Cargar usuarios</button>
+
+<!-- Mensaje de error -->
+<p *ngIf="errorMensaje" style="color: red;">
+  {{ errorMensaje }}
+</p>
+
+<ul>
+  <li *ngFor="let usuario of usuarios">
+    {{ usuario.name }} - {{ usuario.email }}
+  </li>
+</ul>

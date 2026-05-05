@@ -1,0 +1,43 @@
+﻿/* =====================================================
+   menu.scss
+   Estilos del menú de navegación superior.
+   Define la apariencia de enlaces y el estado activo
+   para orientar al usuario dentro de la aplicación.
+   ===================================================== */
+
+/* Contenedor principal del menú */
+.menu {
+  background: linear-gradient(135deg, #111827, #1f2937);
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+/* Distribución horizontal de opciones de navegación */
+.menu ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+/* Estilo base de los enlaces del menú */
+.menu a {
+  color: #f9fafb;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding-bottom: 6px;
+}
+
+/* Respuesta visual al pasar el cursor */
+.menu a:hover {
+  color: #93c5fd;
+}
+
+/* Marca visual de la ruta activa */
+.menu a.activo {
+  font-weight: bold;
+  border-bottom: 2px solid #60a5fa;
+}

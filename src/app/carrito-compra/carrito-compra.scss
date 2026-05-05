@@ -1,0 +1,66 @@
+﻿/* =====================================================
+   carrito-compra.scss
+   Estilos de la sección de carrito.
+   Mantiene la coherencia visual con el catálogo y destaca
+   la acción de eliminación de productos.
+   ===================================================== */
+
+/* Encabezado de la sección */
+h2 {
+  margin: 0 0 20px 0;
+  font-size: 32px;
+  color: #111827;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 12px;
+}
+
+/* Tarjeta de cada elemento del carrito */
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding: 16px;
+  margin-bottom: 14px;
+  border-radius: 14px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+}
+
+/* Nombre del producto dentro del carrito */
+.item-info strong {
+  display: block;
+  font-size: 19px;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+/* Texto de detalle (precio) */
+.item-info p {
+  margin: 4px 0;
+  color: #4b5563;
+}
+
+/* Botón de eliminar con color de acción destructiva */
+button {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  min-width: 110px;
+}
+
+/* Bloque informativo para carrito vacío */
+.vacio {
+  background: #f9fafb;
+  border: 1px dashed #cbd5e1;
+  padding: 18px;
+  border-radius: 12px;
+  text-align: center;
+  color: #6b7280;
+  font-style: italic;
+}
